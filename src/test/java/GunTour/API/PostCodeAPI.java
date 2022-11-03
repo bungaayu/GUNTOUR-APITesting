@@ -1,4 +1,4 @@
-package starter.postcodes;
+package GunTour.API;
 
 import io.restassured.RestAssured;
 import net.serenitybdd.rest.SerenityRest;

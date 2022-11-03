@@ -1,4 +1,4 @@
-package starter.postcodes;
+package GunTour.Responses;
 
 public class LocationResponse {
     public static final String COUNTRY = "'country'";

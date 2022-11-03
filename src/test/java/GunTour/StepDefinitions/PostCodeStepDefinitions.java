@@ -1,5 +1,7 @@
-package starter.postcodes;
+package GunTour.StepDefinitions;
 
+import GunTour.API.PostCodeAPI;
+import GunTour.Responses.LocationResponse;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
