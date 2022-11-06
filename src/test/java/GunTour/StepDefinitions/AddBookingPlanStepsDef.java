@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 
@@ -59,6 +60,55 @@ public class AddBookingPlanStepsDef {
 
     @And("Add booking plan json schema validator")
     public void addBookingPlanJsonSchemaValidator() {
+        File json = new File(GunTourAPI_Booking.JSON_SCHEMA_VALIDATOR_BOOKING+"/AddBookingJsonSchemaValidator.json");
+        SerenityRest.then().body(JsonSchemaValidator.matchesJsonSchema(json));
+    }
 
+    @Given("Add booking plan without input end date")
+    public void addBookingPlanWithoutInputEndDate() {
+        File json = new File(GunTourAPI_Booking.JSON_REQUEST_BODY_BOOKING +"/AddBookingPlanWithoutEndDate.json");
+        bookingAPI.addBookingPlan(json);
+    }
+
+    @Given("Add booking plan without input entrance gate")
+    public void addBookingPlanWithoutInputEntranceGate() {
+        File json = new File(GunTourAPI_Booking.JSON_REQUEST_BODY_BOOKING +"/AddBookingPlanWithoutEntrance.json");
+        bookingAPI.addBookingPlan(json);
+    }
+
+    @Given("Add booking plan without input number of ticket")
+    public void addBookingPlanWithoutInputNumberOfTicket() {
+        File json = new File(GunTourAPI_Booking.JSON_REQUEST_BODY_BOOKING +"/AddBookingPlanWithoutTicket.json");
+        bookingAPI.addBookingPlan(json);
+    }
+
+    @Given("Add booking plan without input any product")
+    public void addBookingPlanWithoutInputAnyProduct() {
+        File json = new File(GunTourAPI_Booking.JSON_REQUEST_BODY_BOOKING +"/AddBookingPlanWithoutProduct.json");
+        bookingAPI.addBookingPlan(json);
+    }
+
+    @And("Add booking plan without input product json schema validator")
+    public void addBookingPlanWithoutInputProductJsonSchemaValidator() {
+        File json = new File(GunTourAPI_Booking.JSON_SCHEMA_VALIDATOR_BOOKING+"/AddBookingWithoutInputProductJsonSchemaValidator.json");
+        SerenityRest.then().body(JsonSchemaValidator.matchesJsonSchema(json));
+    }
+
+    @Given("Add booking plan invalid authorization")
+    public void addBookingPlanInvalidAuthorization() {
+        File json = new File(GunTourAPI_Booking.JSON_REQUEST_BODY_BOOKING +"/AddBookingPlan.json");
+        bookingAPI.addBookingPlanInvalidAuth(json);
+    }
+
+    @Given("Add booking plan without input body request")
+    public void addBookingPlanWithoutInputBodyRequest() {
+        File json = new File(GunTourAPI_Booking.JSON_REQUEST_BODY_BOOKING +"/AddBookingPlanEmptyAll.json");
+        bookingAPI.addBookingPlan(json);
+    }
+
+    @Given("Add booking plan without input ranger")
+    public void addBookingPlanWithoutInputRanger() {
+        File json = new File(GunTourAPI_Booking.JSON_REQUEST_BODY_BOOKING +"/AddBookingPlanWithoutRanger.json");
+        bookingAPI.addBookingPlan(json);
     }
 }

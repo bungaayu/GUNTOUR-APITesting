@@ -34,10 +34,6 @@ public class GetBookingHistoryStepsDef {
         SerenityRest.then().body(GunTourResponse.MESSAGE, equalTo(message));
     }
 
-    @And("Get booking history json schema validator")
-    public void getBookingHistoryJsonSchemaValidator() {
-    }
-
     @Given("Get booking pendaki history invalid path {string} with string value")
     public void getBookingPendakiHistoryInvalidPathWithStringValue(String path) {
         bookingAPI.getBookingHistory(path);

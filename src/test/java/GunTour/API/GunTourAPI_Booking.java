@@ -15,6 +15,8 @@ public class GunTourAPI_Booking {
     public static String GET_BOOKING_HISTORY = URL+"/{path}";
     public static String PATH_ADD_BOOKING_PLAN = URL+"/{path}";
     public static String ADD_BOOKING_PLAN = URL+"/booking";
+    public static String BOOKING_DETAIL_BY_ID = URL+"/booking/{id}";
+    public static String GET_BOOKING_RANGER = URL+"/booking/{path}";
 
     public static final String DIR = System.getProperty("user.dir");
     public static final String JSON_REQUEST_BODY_BOOKING = DIR+"/src/test/resources/JSON/RequestBody/Booking";
@@ -63,5 +65,54 @@ public class GunTourAPI_Booking {
         SerenityRest.given().pathParam("path", path)
                 .contentType(ContentType.JSON)
                 .body(json);
+    }
+    @Step("Add booking plan invalid authorization")
+    public void addBookingPlanInvalidAuth(File json) {
+        SerenityRest.given().headers("Authorization", INVALID_AUTH)
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
+    @Step("Get booking detail")
+    public void getBookingDetail(String id) {
+        SerenityRest.given().headers("Authorization", AUTH)
+                .pathParam("id", id);
+    }
+    @Step("Get booking detail empty authorization")
+    public void getBookingDetailWithoutAuth(String id) {
+        SerenityRest.given().pathParam("id", id);
+    }
+    @Step("Get booking detail invalid authorization")
+    public void getBookingDetailInvalidAuth(String id) {
+        SerenityRest.given().pathParam("id", id)
+                .headers("Authorization", INVALID_AUTH);
+    }
+    @Step("Delete booking plan")
+    public void deleteBookingPlan(String id) {
+        SerenityRest.given().pathParam("id", id)
+                .headers("Authorization", AUTH);
+    }
+    @Step("Delete booking plan without authorization")
+    public void deleteBookingPlanWithoutAuth(String id) {
+        SerenityRest.given().pathParam("id", id);
+    }
+    @Step("Delete booking plan invalid authorization")
+    public void deleteBookingPlanInvalidAuth(String id) {
+        SerenityRest.given().pathParam("id", id)
+                .headers("Authorization", INVALID_AUTH);
+    }
+
+    @Step("Get booking ranger")
+    public void getBookingRanger(String path) {
+        SerenityRest.given().pathParam("path", path)
+                .headers("Authorization", AUTH);
+    }
+    @Step("Get booking ranger without authorization")
+    public void getBookingRangerWithoutAuth(String path) {
+        SerenityRest.given().pathParam("path", path);
+    }
+    @Step("Get booking ranger invalid authorization")
+    public void getBookingRangerInvalidAuth(String path) {
+        SerenityRest.given().pathParam("path", path)
+                .headers("Authorization", INVALID_AUTH);
     }
 }
