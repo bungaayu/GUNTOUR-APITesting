@@ -31,9 +31,9 @@ public class DeleteBookingPlanStepsDef {
         bookingAPI.deleteBookingPlanInvalidAuth(id);
     }
 
-    @Given("Delete booking plan with deleted id {string}")
-    public void deleteBookingPlanWithDeletedId(String id) {
-        bookingAPI.deleteBookingPlanWithString(id);
+    @Given("Delete booking plan with deleted id")
+    public void deleteBookingPlanWithDeletedId() {
+        bookingAPI.deleteBookingPlanWithGlobalEnv();
     }
 
     @Then("Should return {int} Internal Server Error")
@@ -44,5 +44,10 @@ public class DeleteBookingPlanStepsDef {
     @Given("Delete booking plan with invalid id {string}")
     public void deleteBookingPlanWithInvalidId(String id) {
         bookingAPI.deleteBookingPlanWithString(id);
+    }
+
+    @Given("Delete booking plan with created id")
+    public void deleteBookingPlanWithCreatedId() {
+        bookingAPI.deleteBookingPlanWithGlobalEnv();
     }
 }

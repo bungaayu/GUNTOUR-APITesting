@@ -1,6 +1,7 @@
 package GunTour.StepDefinitions;
 
 import GunTour.API.GunTourAPI_Booking;
+import GunTour.Responses.GlobalEnvirontm;
 import GunTour.Responses.GunTourResponse;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -8,6 +9,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
+import org.junit.Assert;
+
 import static org.hamcrest.Matchers.equalTo;
 
 public class GetBookingHistoryStepsDef {
@@ -62,5 +65,15 @@ public class GetBookingHistoryStepsDef {
     @Given("Get booking pendaki history valid path {string} invalid authorization")
     public void getBookingPendakiHistoryValidPathInvalidAuthorization(String path) {
         bookingAPI.getBookingHistoryInvalidAuth(path);
+    }
+
+    @And("Send id booking to global environment")
+    public int sendIdBookingToGlobalEnvironment() {
+        return GlobalEnvirontm.BOOKING_ID=SerenityRest.then().extract().path(GunTourResponse.GET_BOOKING_ID);
+    }
+
+    @And("Assert booking id is not {int}")
+    public void assertBookingIdIsNot(int val) {
+        Assert.assertNotEquals(GlobalEnvirontm.BOOKING_ID,val);
     }
 }

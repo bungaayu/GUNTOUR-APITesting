@@ -1,6 +1,7 @@
 package GunTour.StepDefinitions;
 
 import GunTour.API.GunTourAPI_Booking;
+import GunTour.Responses.GlobalEnvirontm;
 import GunTour.Responses.GunTourResponse;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -11,12 +12,14 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.path.json.JsonPath;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
+import org.junit.Assert;
 
 import java.io.File;
 
 public class AddBookingPlanStepsDef {
     @Steps
     GunTourAPI_Booking bookingAPI;
+    GlobalEnvirontm environment;
     public RestAssuredResponseOptionsGroovyImpl response;
     @Given("Add booking plan with all valid value {string}")
     public void addBookingPlanWithAllValidValue(String path) {
@@ -116,4 +119,13 @@ public class AddBookingPlanStepsDef {
         bookingAPI.addBookingPlan(json);
     }
 
+    @And("Get created booking id")
+    public int getCreatedBookingId() {
+        return GlobalEnvirontm.BOOKING_ID = SerenityRest.then().extract().path("data.id_booking");
+    }
+
+    @And("Assert that booking id is not {int}")
+    public void assertThatBookingIdIsNot(int val) {
+        Assert.assertNotEquals(GlobalEnvirontm.BOOKING_ID, val);
+    }
 }

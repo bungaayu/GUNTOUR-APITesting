@@ -6,7 +6,7 @@ import io.cucumber.java.en.When;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 
-public class GetBookingRanger {
+public class GetBookingRangerStepsDef {
     @Steps
     GunTourAPI_Booking bookingAPI;
     @Given("Get booking ranger with valid path {string}")

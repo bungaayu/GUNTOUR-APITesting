@@ -1,5 +1,6 @@
 package GunTour.API;
 
+import GunTour.Responses.GlobalEnvirontm;
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
@@ -92,8 +93,8 @@ public class GunTourAPI_Booking {
                 .headers("Authorization", AUTH);
     }
     @Step("Delete booking plan int")
-    public void deleteBookingPlan(int id) {
-        SerenityRest.given().pathParam("id", id)
+    public void deleteBookingPlanWithGlobalEnv() {
+        SerenityRest.given().pathParam("id", GlobalEnvirontm.BOOKING_ID)
                 .headers("Authorization", AUTH);
     }
     @Step("Delete booking plan without authorization")
@@ -122,21 +123,28 @@ public class GunTourAPI_Booking {
     }
 
     @Step("Edit booking plan")
-    public void editBookingPlan(String id, File json) {
+    public void editBookingPlanInvalidID(String id, File json) {
         SerenityRest.given().pathParam("id", id)
                 .headers("Authorization", AUTH)
                 .contentType(ContentType.JSON)
-                .body(json);;
+                .body(json);
+    }
+    @Step("Edit booking plan")
+    public void editBookingPlan(File json) {
+        SerenityRest.given().pathParam("id", GlobalEnvirontm.BOOKING_ID)
+                .headers("Authorization", AUTH)
+                .contentType(ContentType.JSON)
+                .body(json);
     }
     @Step("Edit booking plan without authorization")
-    public void editBookingPlanWithoutAuth(String id, File json) {
+    public void editBookingPlanWithoutAuth(File json) {
         SerenityRest.given().contentType(ContentType.JSON)
                 .body(json)
-                .pathParam("id", id);
+                .pathParam("id", GlobalEnvirontm.BOOKING_ID);
     }
     @Step("Edit booking plan invalid authorization")
-    public void editBookingPlanInvalidAuth(String id, File json) {
-        SerenityRest.given().pathParam("path", id)
+    public void editBookingPlanInvalidAuth(File json) {
+        SerenityRest.given().pathParam("id", GlobalEnvirontm.BOOKING_ID)
                 .headers("Authorization", INVALID_AUTH)
                 .contentType(ContentType.JSON)
                 .body(json);;

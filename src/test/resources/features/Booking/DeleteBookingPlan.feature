@@ -1,4 +1,12 @@
 Feature: Delete booking plan
+  Scenario: This scenario to create and delete created ID
+    Given Add booking plan without input any product
+    When Send request post add booking plan
+    Then Should return 201 Created
+    And Should return body contain message "success add booking plan"
+    And Get created booking id
+    And Assert that booking id is not 0
+
   Scenario: Delete booking plan with all valid value
     Given Delete booking plan with created id
     When Send request delete booking plan by id
@@ -6,10 +14,9 @@ Feature: Delete booking plan
     And Should return body contain message "success delete data."
 
   Scenario: Delete booking plan invalid id with deleted id
-    Given Delete booking plan with deleted id "2"
+    Given Delete booking plan with deleted id
     When Send request delete booking plan by id
-    Then Should return 500 Internal Server Error
-    And Should return body contain message "no data"
+    Then Should return 204 Internal Server Error
 
   Scenario Outline: Delete booking plan invalid id with value string
     Given Delete booking plan with invalid id "<id>"
