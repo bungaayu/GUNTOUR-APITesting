@@ -7,7 +7,7 @@
     "data": {
       "type": "object",
       "properties": {
-        "id_user": {
+        "id_booking": {
           "type": "integer"
         },
         "date_start": {
@@ -23,55 +23,7 @@
           "type": "integer"
         },
         "product": {
-          "type": "array",
-          "items": [
-            {
-              "type": "object",
-              "properties": {
-                "ID": {
-                  "type": "integer"
-                },
-                "IdBooking": {
-                  "type": "integer"
-                },
-                "id_product": {
-                  "type": "integer"
-                },
-                "product_qty": {
-                  "type": "integer"
-                }
-              },
-              "required": [
-                "ID",
-                "IdBooking",
-                "id_product",
-                "product_qty"
-              ]
-            },
-            {
-              "type": "object",
-              "properties": {
-                "ID": {
-                  "type": "integer"
-                },
-                "IdBooking": {
-                  "type": "integer"
-                },
-                "id_product": {
-                  "type": "integer"
-                },
-                "product_qty": {
-                  "type": "integer"
-                }
-              },
-              "required": [
-                "ID",
-                "IdBooking",
-                "id_product",
-                "product_qty"
-              ]
-            }
-          ]
+          "type": "null"
         },
         "id_ranger": {
           "type": "integer"
@@ -84,10 +36,13 @@
         },
         "link": {
           "type": "string"
+        },
+        "status": {
+          "type": "string"
         }
       },
       "required": [
-        "id_user",
+        "id_booking",
         "date_start",
         "date_end",
         "entrance",
@@ -96,7 +51,8 @@
         "id_ranger",
         "gross_amount",
         "order_id",
-        "link"
+        "link",
+        "status"
       ]
     },
     "message": {

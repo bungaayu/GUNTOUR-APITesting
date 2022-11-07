@@ -1,11 +1,14 @@
 package GunTour.StepDefinitions;
 
 import GunTour.API.GunTourAPI_Booking;
+import GunTour.Responses.GunTourResponse;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.internal.RestAssuredResponseOptionsGroovyImpl;
 import io.restassured.module.jsv.JsonSchemaValidator;
+import io.restassured.path.json.JsonPath;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 
@@ -14,6 +17,7 @@ import java.io.File;
 public class AddBookingPlanStepsDef {
     @Steps
     GunTourAPI_Booking bookingAPI;
+    public RestAssuredResponseOptionsGroovyImpl response;
     @Given("Add booking plan with all valid value {string}")
     public void addBookingPlanWithAllValidValue(String path) {
         File json = new File(GunTourAPI_Booking.JSON_REQUEST_BODY_BOOKING +"/AddBookingPlan.json");
@@ -111,4 +115,5 @@ public class AddBookingPlanStepsDef {
         File json = new File(GunTourAPI_Booking.JSON_REQUEST_BODY_BOOKING +"/AddBookingPlanWithoutRanger.json");
         bookingAPI.addBookingPlan(json);
     }
+
 }

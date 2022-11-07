@@ -86,8 +86,13 @@ public class GunTourAPI_Booking {
         SerenityRest.given().pathParam("id", id)
                 .headers("Authorization", INVALID_AUTH);
     }
-    @Step("Delete booking plan")
-    public void deleteBookingPlan(String id) {
+    @Step("Delete booking plan with string")
+    public void deleteBookingPlanWithString(String id) {
+        SerenityRest.given().pathParam("id", id)
+                .headers("Authorization", AUTH);
+    }
+    @Step("Delete booking plan int")
+    public void deleteBookingPlan(int id) {
         SerenityRest.given().pathParam("id", id)
                 .headers("Authorization", AUTH);
     }
@@ -114,5 +119,26 @@ public class GunTourAPI_Booking {
     public void getBookingRangerInvalidAuth(String path) {
         SerenityRest.given().pathParam("path", path)
                 .headers("Authorization", INVALID_AUTH);
+    }
+
+    @Step("Edit booking plan")
+    public void editBookingPlan(String id, File json) {
+        SerenityRest.given().pathParam("id", id)
+                .headers("Authorization", AUTH)
+                .contentType(ContentType.JSON)
+                .body(json);;
+    }
+    @Step("Edit booking plan without authorization")
+    public void editBookingPlanWithoutAuth(String id, File json) {
+        SerenityRest.given().contentType(ContentType.JSON)
+                .body(json)
+                .pathParam("id", id);
+    }
+    @Step("Edit booking plan invalid authorization")
+    public void editBookingPlanInvalidAuth(String id, File json) {
+        SerenityRest.given().pathParam("path", id)
+                .headers("Authorization", INVALID_AUTH)
+                .contentType(ContentType.JSON)
+                .body(json);;
     }
 }

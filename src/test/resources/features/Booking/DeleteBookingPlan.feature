@@ -1,6 +1,6 @@
 Feature: Delete booking plan
   Scenario: Delete booking plan with all valid value
-    Given Delete booking plan with valid id "2"
+    Given Delete booking plan with created id
     When Send request delete booking plan by id
     Then Should return 200 OK
     And Should return body contain message "success delete data."

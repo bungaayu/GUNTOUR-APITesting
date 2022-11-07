@@ -10,9 +10,10 @@ import net.thucydides.core.annotations.Steps;
 public class DeleteBookingPlanStepsDef {
     @Steps
     GunTourAPI_Booking bookingAPI;
+    AddBookingPlanStepsDef addBookingPlanStepsDef;
     @Given("Delete booking plan with valid id {string}")
     public void deleteBookingPlanWithValidId(String id) {
-        bookingAPI.deleteBookingPlan(id);
+        bookingAPI.deleteBookingPlanWithString(id);
     }
 
     @When("Send request delete booking plan by id")
@@ -32,7 +33,7 @@ public class DeleteBookingPlanStepsDef {
 
     @Given("Delete booking plan with deleted id {string}")
     public void deleteBookingPlanWithDeletedId(String id) {
-        bookingAPI.deleteBookingPlan(id);
+        bookingAPI.deleteBookingPlanWithString(id);
     }
 
     @Then("Should return {int} Internal Server Error")
@@ -42,6 +43,6 @@ public class DeleteBookingPlanStepsDef {
 
     @Given("Delete booking plan with invalid id {string}")
     public void deleteBookingPlanWithInvalidId(String id) {
-        bookingAPI.deleteBookingPlan(id);
+        bookingAPI.deleteBookingPlanWithString(id);
     }
 }
