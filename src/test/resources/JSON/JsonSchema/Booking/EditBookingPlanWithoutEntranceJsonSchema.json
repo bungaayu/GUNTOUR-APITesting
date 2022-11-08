@@ -55,37 +55,6 @@
                 "product_name",
                 "rent_price"
               ]
-            },
-            {
-              "type": "object",
-              "properties": {
-                "ID": {
-                  "type": "integer"
-                },
-                "IdBooking": {
-                  "type": "integer"
-                },
-                "id_product": {
-                  "type": "integer"
-                },
-                "product_qty": {
-                  "type": "integer"
-                },
-                "product_name": {
-                  "type": "string"
-                },
-                "rent_price": {
-                  "type": "integer"
-                }
-              },
-              "required": [
-                "ID",
-                "IdBooking",
-                "id_product",
-                "product_qty",
-                "product_name",
-                "rent_price"
-              ]
             }
           ]
         },

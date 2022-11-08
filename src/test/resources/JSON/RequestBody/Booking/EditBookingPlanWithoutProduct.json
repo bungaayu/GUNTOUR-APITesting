@@ -1,0 +1,9 @@
+{
+  "date_start": "2023-01-24",
+  "date_end": "2023-01-26",
+  "entrance": "Pintu Masuk Cibodas",
+  "ticket": 3,
+  "id_ranger": 1,
+  "ranger_name": "sodikin",
+  "status": "paid"
+}

@@ -1,0 +1,23 @@
+{
+  "date_start": "2023-01-24",
+  "date_end": "2023-01-26",
+  "entrance": "Pintu Masuk Cibodas",
+  "ticket": 3,
+  "product": [
+    {
+      "id_product": 1,
+      "product_name": "Tenda",
+      "product_qty": 3,
+      "rent_price": 100000
+    },
+    {
+      "id_product": 2,
+      "product_name": "selimut",
+      "product_qty": 3,
+      "rent_price": 100000
+    }
+  ],
+  "id_ranger": 1,
+  "ranger_name": "sodikin",
+  "status": "paid"
+}

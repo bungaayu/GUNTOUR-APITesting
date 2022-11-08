@@ -4,7 +4,7 @@ Feature: Add booking plan
     When Send request post add booking plan with all valid body request
     Then Should return 201 Created
     And Should return body contain message "success add booking plan"
-    And Add booking plan json schema validator
+    And Assert booking plan json schema validator
 
   Scenario: Add booking plan empty authorization
     Given Add booking plan empty authorization valid path "booking"
@@ -16,6 +16,7 @@ Feature: Add booking plan
     Given Add booking plan with all valid path "<path>" with string
     When Send request post add booking plan with all valid body request
     Then Should return 404 Not Found
+    And Should return body contain message "Not Found"
     Examples:
       |  path   |
       |47394    |
@@ -48,7 +49,7 @@ Feature: Add booking plan
     When Send request post add booking plan
     Then Should return 201 Created
     And Should return body contain message "success add booking plan"
-    And Add booking plan without input product json schema validator
+    And Assert booking plan without input product json schema validator
 
   Scenario: Add booking plan empty request body
     Given Add booking plan without input body request

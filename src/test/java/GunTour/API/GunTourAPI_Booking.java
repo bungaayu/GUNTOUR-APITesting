@@ -1,6 +1,6 @@
 package GunTour.API;
 
-import GunTour.Responses.GlobalEnvirontm;
+import GunTour.Responses.GlobalEnv;
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
@@ -56,11 +56,6 @@ public class GunTourAPI_Booking {
                 .contentType(ContentType.JSON)
                 .body(json);
     }
-    @Step("Add booking plan invalid path with integer")
-    public void addBookingPlanInvalidPathInteger(int path) {
-        SerenityRest.given().headers("Authorization", AUTH)
-                .pathParam("path", path);
-    }
     @Step("Add booking plan empty authorization")
     public void addBookingPlanEmptyAuth(String path, File json) {
         SerenityRest.given().pathParam("path", path)
@@ -94,7 +89,7 @@ public class GunTourAPI_Booking {
     }
     @Step("Delete booking plan int")
     public void deleteBookingPlanWithGlobalEnv() {
-        SerenityRest.given().pathParam("id", GlobalEnvirontm.BOOKING_ID)
+        SerenityRest.given().pathParam("id", GlobalEnv.BOOKING_ID)
                 .headers("Authorization", AUTH);
     }
     @Step("Delete booking plan without authorization")
@@ -131,7 +126,7 @@ public class GunTourAPI_Booking {
     }
     @Step("Edit booking plan")
     public void editBookingPlan(File json) {
-        SerenityRest.given().pathParam("id", GlobalEnvirontm.BOOKING_ID)
+        SerenityRest.given().pathParam("id", GlobalEnv.BOOKING_ID)
                 .headers("Authorization", AUTH)
                 .contentType(ContentType.JSON)
                 .body(json);
@@ -140,13 +135,14 @@ public class GunTourAPI_Booking {
     public void editBookingPlanWithoutAuth(File json) {
         SerenityRest.given().contentType(ContentType.JSON)
                 .body(json)
-                .pathParam("id", GlobalEnvirontm.BOOKING_ID);
+                .pathParam("id", GlobalEnv.BOOKING_ID);
     }
     @Step("Edit booking plan invalid authorization")
     public void editBookingPlanInvalidAuth(File json) {
-        SerenityRest.given().pathParam("id", GlobalEnvirontm.BOOKING_ID)
+        SerenityRest.given().pathParam("id", GlobalEnv.BOOKING_ID)
                 .headers("Authorization", INVALID_AUTH)
                 .contentType(ContentType.JSON)
                 .body(json);;
     }
+
 }

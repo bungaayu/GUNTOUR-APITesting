@@ -16,12 +16,12 @@ Feature: Delete booking plan
   Scenario: Delete booking plan invalid id with deleted id
     Given Delete booking plan with deleted id
     When Send request delete booking plan by id
-    Then Should return 204 Internal Server Error
+    Then Should return 404 Not Found
 
   Scenario Outline: Delete booking plan invalid id with value string
     Given Delete booking plan with invalid id "<id>"
     When Send request delete booking plan by id
-    Then Should return 500 Internal Server Error
+    Then Should return 404 Not Found
     Examples:
     |  id  |
     |bonkngs|

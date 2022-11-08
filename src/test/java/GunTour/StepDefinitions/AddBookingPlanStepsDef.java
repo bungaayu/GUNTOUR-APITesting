@@ -1,15 +1,13 @@
 package GunTour.StepDefinitions;
 
 import GunTour.API.GunTourAPI_Booking;
-import GunTour.Responses.GlobalEnvirontm;
-import GunTour.Responses.GunTourResponse;
+import GunTour.Responses.GlobalEnv;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.internal.RestAssuredResponseOptionsGroovyImpl;
 import io.restassured.module.jsv.JsonSchemaValidator;
-import io.restassured.path.json.JsonPath;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Assert;
@@ -19,7 +17,7 @@ import java.io.File;
 public class AddBookingPlanStepsDef {
     @Steps
     GunTourAPI_Booking bookingAPI;
-    GlobalEnvirontm environment;
+    GlobalEnv environment;
     public RestAssuredResponseOptionsGroovyImpl response;
     @Given("Add booking plan with all valid value {string}")
     public void addBookingPlanWithAllValidValue(String path) {
@@ -65,7 +63,7 @@ public class AddBookingPlanStepsDef {
         SerenityRest.then().statusCode(badRequest);
     }
 
-    @And("Add booking plan json schema validator")
+    @And("Assert booking plan json schema validator")
     public void addBookingPlanJsonSchemaValidator() {
         File json = new File(GunTourAPI_Booking.JSON_SCHEMA_VALIDATOR_BOOKING+"/AddBookingJsonSchemaValidator.json");
         SerenityRest.then().body(JsonSchemaValidator.matchesJsonSchema(json));
@@ -95,7 +93,7 @@ public class AddBookingPlanStepsDef {
         bookingAPI.addBookingPlan(json);
     }
 
-    @And("Add booking plan without input product json schema validator")
+    @And("Assert booking plan without input product json schema validator")
     public void addBookingPlanWithoutInputProductJsonSchemaValidator() {
         File json = new File(GunTourAPI_Booking.JSON_SCHEMA_VALIDATOR_BOOKING+"/AddBookingWithoutInputProductJsonSchemaValidator.json");
         SerenityRest.then().body(JsonSchemaValidator.matchesJsonSchema(json));
@@ -121,11 +119,11 @@ public class AddBookingPlanStepsDef {
 
     @And("Get created booking id")
     public int getCreatedBookingId() {
-        return GlobalEnvirontm.BOOKING_ID = SerenityRest.then().extract().path("data.id_booking");
+        return GlobalEnv.BOOKING_ID = SerenityRest.then().extract().path("data.id_booking");
     }
 
     @And("Assert that booking id is not {int}")
     public void assertThatBookingIdIsNot(int val) {
-        Assert.assertNotEquals(GlobalEnvirontm.BOOKING_ID, val);
+        Assert.assertNotEquals(GlobalEnv.BOOKING_ID, val);
     }
 }

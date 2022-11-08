@@ -1,9 +1,11 @@
 package GunTour.StepDefinitions;
 
 import GunTour.API.GunTourAPI_Booking;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 
@@ -71,7 +73,7 @@ public class EditBookingPlanStepsDef {
     }
 
     @Given("Edit booking plan valid id without input ranger")
-    public void editBookingPlanValidIdWithoutInputRanger(String id) {
+    public void editBookingPlanValidIdWithoutInputRanger() {
         File json = new File(GunTourAPI_Booking.JSON_REQUEST_BODY_BOOKING +"/EditBookingPlanWithoutRanger.json");
         bookingAPI.editBookingPlan(json);
     }
@@ -80,5 +82,59 @@ public class EditBookingPlanStepsDef {
     public void editBookingPlanWithAllValidCreatedIDBooking() {
         File json = new File(GunTourAPI_Booking.JSON_REQUEST_BODY_BOOKING +"/EditBookingPlan.json");
         bookingAPI.editBookingPlan(json);
+    }
+
+    @Given("Edit booking plan valid id without input status")
+    public void editBookingPlanValidIdWithoutInputStatus() {
+        File json = new File(GunTourAPI_Booking.JSON_REQUEST_BODY_BOOKING +"/EditBookingPlanWithoutStatus.json");
+        bookingAPI.editBookingPlan(json);
+    }
+
+    @Given("Edit booking plan valid id without input body request")
+    public void editBookingPlanValidIdWithoutInputBodyRequest() {
+        File json = new File(GunTourAPI_Booking.JSON_REQUEST_BODY_BOOKING +"/EditBookingPlanEmptyAll.json");
+        bookingAPI.editBookingPlan(json);
+    }
+
+    @And("Assert json schema edit booking plan")
+    public void assertJsonSchemaEditBookingPlan() {
+        File json = new File(GunTourAPI_Booking.JSON_SCHEMA_VALIDATOR_BOOKING+"/EditBookingPlanJsonSchema.json");
+        SerenityRest.then().body(JsonSchemaValidator.matchesJsonSchema(json));
+    }
+
+    @And("Assert json schema edit booking plan without input start date")
+    public void assertJsonSchemaEditBookingPlanWithoutInputStartDate() {
+        File json = new File(GunTourAPI_Booking.JSON_SCHEMA_VALIDATOR_BOOKING+"/EditBookingPlanWithoutStartDateJsonSchema.json");
+        SerenityRest.then().body(JsonSchemaValidator.matchesJsonSchema(json));
+    }
+
+    @And("Assert json schema edit booking plan without input end date")
+    public void assertJsonSchemaEditBookingPlanWithoutInputEndDate() {
+        File json = new File(GunTourAPI_Booking.JSON_SCHEMA_VALIDATOR_BOOKING+"/EditBookingPlanWithoutEndDateJsonSchema.json");
+        SerenityRest.then().body(JsonSchemaValidator.matchesJsonSchema(json));
+    }
+
+    @And("Assert json schema edit booking plan without input entrance")
+    public void assertJsonSchemaEditBookingPlanWithoutInputEntrance() {
+        File json = new File(GunTourAPI_Booking.JSON_SCHEMA_VALIDATOR_BOOKING+"/EditBookingPlanWithoutEntranceJsonSchema.json");
+        SerenityRest.then().body(JsonSchemaValidator.matchesJsonSchema(json));
+    }
+
+    @And("Assert json schema edit booking plan without input ticket")
+    public void assertJsonSchemaEditBookingPlanWithoutInputTicket() {
+        File json = new File(GunTourAPI_Booking.JSON_SCHEMA_VALIDATOR_BOOKING+"/EditBookingPlanWithoutTicketJsonSchema.json");
+        SerenityRest.then().body(JsonSchemaValidator.matchesJsonSchema(json));
+    }
+
+    @And("Assert json schema edit booking plan without input ranger")
+    public void assertJsonSchemaEditBookingPlanWithoutInputRanger() {
+        File json = new File(GunTourAPI_Booking.JSON_SCHEMA_VALIDATOR_BOOKING+"/EditBookingPlanWithoutRangerJsonSchema.json");
+        SerenityRest.then().body(JsonSchemaValidator.matchesJsonSchema(json));
+    }
+
+    @And("Assert json schema edit booking plan without input status")
+    public void assertJsonSchemaEditBookingPlanWithoutInputStatus() {
+        File json = new File(GunTourAPI_Booking.JSON_SCHEMA_VALIDATOR_BOOKING+"/EditBookingPlanWithoutStatusJsonSchema.json");
+        SerenityRest.then().body(JsonSchemaValidator.matchesJsonSchema(json));
     }
 }
