@@ -1,6 +1,7 @@
 Feature: Delete booking plan
   Background:
-    Given Get booking pendaki history with valid path "booking"
+    Given User already login
+    And Get booking pendaki history with valid path "booking"
     When Send request to get booking pendaki history
     Then Should return 200 OK
     And Should return body contain message "success get booking history"

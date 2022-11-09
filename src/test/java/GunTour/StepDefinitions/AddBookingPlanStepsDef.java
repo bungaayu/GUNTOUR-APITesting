@@ -132,4 +132,28 @@ public class AddBookingPlanStepsDef {
         File json = new File(GunTourAPI_Booking.JSON_REQUEST_BODY_BOOKING +"/AddBookingPlanWithoutGrossAmount.json");
         bookingAPI.addBookingPlan(json);
     }
+
+    @Given("User already login")
+    public void userAlreadyLogin() {
+        File json = new File(GunTourAPI_Booking.JSON_REQUEST_BODY_BOOKING+"/LoginAri.json");
+        bookingAPI.loginAriUser(json);
+        SerenityRest.when().post("https://mdanys.online/login");
+        GunTourAPI_Booking.AUTH =SerenityRest.then().extract().path("data.token");
+        Assert.assertNotNull(GunTourAPI_Booking.AUTH);
+    }
+
+    @When("Send request post login")
+    public void sendRequestPostLogin() {
+        SerenityRest.when().post("https://mdanys.online/login");
+    }
+    @And("Get login token as ari user")
+    public void getLoginTokenAsAriUser() {
+        GunTourAPI_Booking.AUTH =SerenityRest.then().extract().path("data.token");
+    }
+    @And("Assert booking id is not null")
+    public void assertBookingIdIsNotNull() {
+        Assert.assertNotNull(GunTourAPI_Booking.AUTH);
+    }
+
+
 }

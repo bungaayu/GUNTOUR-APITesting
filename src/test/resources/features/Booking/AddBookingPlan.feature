@@ -1,4 +1,7 @@
 Feature: Add booking plan
+  Background: User already login
+    Given User already login
+
   Scenario: Add booking plan with all valid value
     Given Add booking plan with all valid value "booking"
     When Send request post add booking plan with all valid body request

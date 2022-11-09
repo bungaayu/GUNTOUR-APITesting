@@ -1,4 +1,7 @@
 Feature: Get booking pendaki history
+  Background:
+    Given User already login
+
   Scenario: Get booking pendaki history with all valid value
     Given Get booking pendaki history with valid path "booking"
     When Send request to get booking pendaki history

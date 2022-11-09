@@ -1,4 +1,7 @@
 Feature: Get booking ranger
+  Background:
+    Given User already login
+
   Scenario: Get booking ranger with all valid value
     Given Get booking ranger with valid path "ranger"
     When Send request get booking ranger
