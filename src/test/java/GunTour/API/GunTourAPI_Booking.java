@@ -4,14 +4,12 @@ import GunTour.Responses.GlobalEnv;
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
-import org.apache.http.auth.AUTH;
 
 import java.io.File;
 
 public class GunTourAPI_Booking {
 
     public static String URL = "https://mdanys.online";
-//    public static String AUTH = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHBpcmVkIjoxNjY3NjYzNzc1LCJpZCI6MTIsInJvbGUiOiJwZW5kYWtpIn0.xojGQI34AK7qHBx3ZvaJlgA92BuA34yAoTLxIfL3OS0";
     public static String AUTH;
     public static String INVALID_AUTH = "Bearer diejdeokk933kd3k0";
 
@@ -75,15 +73,7 @@ public class GunTourAPI_Booking {
         SerenityRest.given().headers("Authorization","Bearer "+AUTH)
                 .pathParam("id", id);
     }
-    @Step("Get booking detail empty authorization")
-    public void getBookingDetailWithoutAuth(String id) {
-        SerenityRest.given().pathParam("id", id);
-    }
-    @Step("Get booking detail invalid authorization")
-    public void getBookingDetailInvalidAuth(String id) {
-        SerenityRest.given().pathParam("id", id)
-                .headers("Authorization", INVALID_AUTH);
-    }
+
     @Step("Delete booking plan with string")
     public void deleteBookingPlanWithString(String id) {
         SerenityRest.given().pathParam("id", id)
