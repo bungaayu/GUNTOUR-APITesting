@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "id_product": {
+          "type": "integer"
+        },
+        "product_name": {
+          "type": "string"
+        },
+        "rent_price": {
+          "type": "integer"
+        },
+        "detail": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "product_picture": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id_product",
+        "product_name",
+        "rent_price",
+        "detail",
+        "note",
+        "product_picture"
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "data",
+    "message"
+  ]
+}

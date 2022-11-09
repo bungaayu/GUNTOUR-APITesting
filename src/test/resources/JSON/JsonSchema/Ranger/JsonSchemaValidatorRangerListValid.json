@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id_ranger": {
+              "type": "integer"
+            },
+            "fullname": {
+              "type": "string"
+            },
+            "price/day": {
+              "type": "integer"
+            },
+            "detail": {
+              "type": "string"
+            },
+            "user_picture": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id_ranger",
+            "fullname",
+            "price/day",
+            "detail",
+            "user_picture"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id_ranger": {
+              "type": "integer"
+            },
+            "fullname": {
+              "type": "string"
+            },
+            "price/day": {
+              "type": "integer"
+            },
+            "detail": {
+              "type": "string"
+            },
+            "user_picture": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id_ranger",
+            "fullname",
+            "price/day",
+            "detail",
+            "user_picture"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id_ranger": {
+              "type": "integer"
+            },
+            "fullname": {
+              "type": "string"
+            },
+            "price/day": {
+              "type": "integer"
+            },
+            "detail": {
+              "type": "string"
+            },
+            "user_picture": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id_ranger",
+            "fullname",
+            "price/day",
+            "detail",
+            "user_picture"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "message",
+    "data"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "id_ranger": {
+          "type": "integer"
+        },
+        "id_user": {
+          "type": "integer"
+        },
+        "fullname": {
+          "type": "string"
+        },
+        "ttl": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "docs": {
+          "type": "string"
+        },
+        "price/day": {
+          "type": "integer"
+        },
+        "detail": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id_ranger",
+        "id_user",
+        "fullname",
+        "ttl",
+        "address",
+        "phone",
+        "gender",
+        "docs",
+        "price/day",
+        "detail"
+      ]
+    }
+  },
+  "required": [
+    "message",
+    "data"
+  ]
+}
