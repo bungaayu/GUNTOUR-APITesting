@@ -59,10 +59,16 @@ Feature: Add booking plan
   Scenario: Add booking plan without input ranger
     Given Add booking plan without input ranger
     When Send request post add booking plan
-    Then Should return 400 Bad Request
+    Then Should return 201 Created
+    And Should return body contain message "success add booking plan"
 
   Scenario: Add booking plan invalid authorization
     Given Add booking plan invalid authorization
     When Send request post add booking plan
     Then Should return 401 Unauthorized
     And Should return body contain message "invalid or expired jwt"
+
+  Scenario: Add booking plan without input gross amount
+    Given Add booking plan without input gross amount
+    When Send request post add booking plan
+    Then Should return 400 Bad Request

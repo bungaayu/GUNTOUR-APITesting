@@ -1,22 +1,17 @@
 Feature: Delete booking plan
-  Scenario: This scenario to create and delete created ID
-    Given Add booking plan without input any product
-    When Send request post add booking plan
-    Then Should return 201 Created
-    And Should return body contain message "success add booking plan"
-    And Get created booking id
-    And Assert that booking id is not 0
+  Background:
+    Given Get booking pendaki history with valid path "booking"
+    When Send request to get booking pendaki history
+    Then Should return 200 OK
+    And Should return body contain message "success get booking history"
+    And Send id booking to global environment
+    And Assert booking id is not 0
 
   Scenario: Delete booking plan with all valid value
     Given Delete booking plan with created id
     When Send request delete booking plan by id
     Then Should return 200 OK
     And Should return body contain message "success delete data."
-
-  Scenario: Delete booking plan invalid id with deleted id
-    Given Delete booking plan with deleted id
-    When Send request delete booking plan by id
-    Then Should return 404 Not Found
 
   Scenario Outline: Delete booking plan invalid id with value string
     Given Delete booking plan with invalid id "<id>"

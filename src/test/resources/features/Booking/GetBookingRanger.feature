@@ -13,7 +13,7 @@ Feature: Get booking ranger
     |path|
     |*$@&)!|
     |rangersr|
-    |ranger/492840|
+    |492840|
 
   Scenario: Get booking ranger without authorization
     Given Get booking ranger with valid path "ranger" without authorization
@@ -23,6 +23,7 @@ Feature: Get booking ranger
 
   Scenario: Get booking ranger invalid authorization
     Given Get booking ranger with valid path "ranger" invalid authorization
+    When Send request get booking ranger
     Then Should return 401 Unauthorized
     And Should return body contain message "invalid or expired jwt"
 

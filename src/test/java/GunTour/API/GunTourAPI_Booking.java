@@ -11,6 +11,7 @@ public class GunTourAPI_Booking {
 
     public static String URL = "https://mdanys.online";
     public static String AUTH = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHBpcmVkIjoxNjY3NjYzNzc1LCJpZCI6MTIsInJvbGUiOiJwZW5kYWtpIn0.xojGQI34AK7qHBx3ZvaJlgA92BuA34yAoTLxIfL3OS0";
+//    public static String AUTH ="Bearer "+GlobalEnv.GET_TOKEN_ARI;
     public static String INVALID_AUTH = "Bearer diejdeokk933kd3k0";
 
     public static String GET_BOOKING_HISTORY = URL+"/{path}";
@@ -144,5 +145,18 @@ public class GunTourAPI_Booking {
                 .contentType(ContentType.JSON)
                 .body(json);;
     }
-
+    @Step("Get booking booking detail")
+    public void getBookingDetailWithGlobalEnv() {
+        SerenityRest.given().pathParam("id", GlobalEnv.BOOKING_ID)
+                .headers("Authorization", AUTH);
+    }
+    @Step("Get booking booking detail")
+    public void getBookingDetailInvalidAuthWithGlobalEnv() {
+        SerenityRest.given().pathParam("id", GlobalEnv.BOOKING_ID)
+                .headers("Authorization", INVALID_AUTH);
+    }
+    @Step("Get booking booking detail")
+    public void getBookingDetailWithGlobalEnvWithoutAUTH() {
+        SerenityRest.given().pathParam("id", GlobalEnv.BOOKING_ID);
+    }
 }

@@ -1,6 +1,6 @@
 {
-  "date_start": "2023-02-19",
-  "date_end": "2023-02-21",
+  "date_start": "2023-01-24",
+  "date_end": "2023-01-27",
   "entrance": "Pintu Masuk Cibodas",
   "ticket": 3,
   "product": [
@@ -17,5 +17,6 @@
       "rent_price": 100000
     }
   ],
-  "gross_amount": 200000
+  "id_ranger": 1,
+  "ranger_name": "sodikin"
 }

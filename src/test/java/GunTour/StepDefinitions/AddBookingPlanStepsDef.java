@@ -126,4 +126,10 @@ public class AddBookingPlanStepsDef {
     public void assertThatBookingIdIsNot(int val) {
         Assert.assertNotEquals(GlobalEnv.BOOKING_ID, val);
     }
+
+    @Given("Add booking plan without input gross amount")
+    public void addBookingPlanWithoutInputGrossAmount() {
+        File json = new File(GunTourAPI_Booking.JSON_REQUEST_BODY_BOOKING +"/AddBookingPlanWithoutGrossAmount.json");
+        bookingAPI.addBookingPlan(json);
+    }
 }

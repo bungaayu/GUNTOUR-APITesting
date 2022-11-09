@@ -9,9 +9,9 @@ import net.thucydides.core.annotations.Steps;
 public class GetBookingDetailStepsDef {
     @Steps
     GunTourAPI_Booking bookingAPI;
-    @Given("Get booking detail with valid id {string}")
-    public void getBookingDetailWithValidId(String id) {
-        bookingAPI.getBookingDetail(id);
+    @Given("Get booking detail with valid id")
+    public void getBookingDetailWithInvalidId() {
+        bookingAPI.getBookingDetailWithGlobalEnv();
     }
 
     @When("Send request get booking detail")
@@ -29,13 +29,13 @@ public class GetBookingDetailStepsDef {
         bookingAPI.getBookingDetail(id);
     }
 
-    @Given("Get booking detail with valid id {string} without authorization")
-    public void getBookingDetailWithValidIdWithoutAuthorization(String id) {
-        bookingAPI.getBookingDetailWithoutAuth(id);
+    @Given("Get booking detail with valid id without authorization")
+    public void getBookingDetailWithValidIdWithoutAuthorization() {
+        bookingAPI.getBookingDetailWithGlobalEnvWithoutAUTH();
     }
 
-    @Given("Get booking detail with valid id {string} invalid authorization")
-    public void getBookingDetailWithValidIdInvalidAuthorization(String id) {
-        bookingAPI.getBookingDetailInvalidAuth(id);
+    @Given("Get booking detail with valid id invalid authorization")
+    public void getBookingDetailWithValidIdInvalidAuthorization() {
+        bookingAPI.getBookingDetailInvalidAuthWithGlobalEnv();
     }
 }
