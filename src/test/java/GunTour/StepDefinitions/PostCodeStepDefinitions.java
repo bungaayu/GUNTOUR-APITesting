@@ -27,4 +27,5 @@ public class PostCodeStepDefinitions {
         restAssuredThat(response -> response.body(LocationResponse.COUNTRY, equalTo(country)));
         restAssuredThat(response -> response.body(LocationResponse.FIRST_PLACE_NAME, equalTo(placeName)));
     }
+
 }
