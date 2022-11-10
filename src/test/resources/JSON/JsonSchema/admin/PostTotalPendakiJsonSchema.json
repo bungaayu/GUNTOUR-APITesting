@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "is_climber": {
+          "type": "integer"
+        },
+        "male_climber": {
+          "type": "integer"
+        },
+        "female_climber": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "is_climber",
+        "male_climber",
+        "female_climber"
+      ]
+    }
+  },
+  "required": [
+    "message",
+    "data"
+  ]
+}

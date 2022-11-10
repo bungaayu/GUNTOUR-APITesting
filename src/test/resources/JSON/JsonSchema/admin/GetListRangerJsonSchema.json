@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data_apply": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "id_ranger": {
+                  "type": "integer"
+                },
+                "fullname": {
+                  "type": "string"
+                },
+                "address": {
+                  "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "gender": {
+                  "type": "string"
+                },
+                "docs": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id_ranger",
+                "fullname",
+                "address",
+                "phone",
+                "gender",
+                "docs"
+              ]
+            }
+          ]
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "data",
+        "message"
+      ]
+    },
+    "data_ranger": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "null"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "data",
+        "message"
+      ]
+    }
+  },
+  "required": [
+    "data_apply",
+    "data_ranger"
+  ]
+}
