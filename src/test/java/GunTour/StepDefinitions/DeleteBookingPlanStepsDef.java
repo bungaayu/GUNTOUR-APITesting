@@ -21,12 +21,12 @@ public class DeleteBookingPlanStepsDef {
         SerenityRest.when().delete(GunTourAPI_Booking.BOOKING_DETAIL_BY_ID);
     }
 
-    @Given("Delete booking plan with valid id {string} empty authorization")
+    @Given("Delete booking plan with invalid id {string} empty authorization")
     public void deleteBookingPlanWithValidIdEmptyAuthorization(String id) {
         bookingAPI.deleteBookingPlanWithoutAuth(id);
     }
 
-    @Given("Delete booking plan with valid id {string} invalid authorization")
+    @Given("Delete booking plan with invalid id {string} invalid authorization")
     public void deleteBookingPlanWithValidIdInvalidAuthorization(String id) {
         bookingAPI.deleteBookingPlanInvalidAuth(id);
     }
