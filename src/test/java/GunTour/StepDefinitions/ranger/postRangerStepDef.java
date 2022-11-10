@@ -70,16 +70,6 @@ public class postRangerStepDef {
         guntourAPI_ranger.postApplyAsRangerWithoutdocs();
     }
 
-    @When("user apply as ranger without price per day")
-    public void userApplyAsRangerWithoutPriceDay() {
-        guntourAPI_ranger.postApplyAsRangerWithoutprice();
-    }
-
-    @When("user apply as ranger without detail")
-    public void userApplyAsRangerWithoutDetail() {
-        guntourAPI_ranger.postApplyAsRangerWithoutdetail();
-    }
-
     @And("send request post ranger with invalid parameter")
     public void sendRequestPostRangerWithInvalidParameter() {
         SerenityRest.when().post(GunTourAPI_Ranger.POST_RANGER_WITH_INVALID_PARAMETER);

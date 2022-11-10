@@ -44,9 +44,7 @@ public class GunTourAPI_Ranger {
                 .multiPart("address", "Jl. Ir. Asep Syaepuloh")
                 .multiPart("phone", "081919191919")
                 .multiPart("gender", "Laki-Laki")
-                .multiPart("docs", new File("src/test/resources/documentToUpload/apply_form_ranger.pdf"))
-                .multiPart("price/day", 150000)
-                .multiPart("detail", "suka makan ikan");
+                .multiPart("docs", new File("src/test/resources/documentToUpload/apply_form_ranger.pdf"));
     }
 
     @Step("post apply as ranger without fullname")
@@ -58,9 +56,7 @@ public class GunTourAPI_Ranger {
                 .multiPart("address", "Jl. Ir. Asep Syaepuloh")
                 .multiPart("phone", "081919191919")
                 .multiPart("gender", "Laki-Laki")
-                .multiPart("docs", new File("src/test/resources/documentToUpload/apply_form_ranger.pdf"))
-                .multiPart("price/day", 150000)
-                .multiPart("detail", "suka makan ikan");
+                .multiPart("docs", new File("src/test/resources/documentToUpload/apply_form_ranger.pdf"));
     }
 
     @Step("post apply as ranger without ttl")
@@ -72,9 +68,7 @@ public class GunTourAPI_Ranger {
                 .multiPart("address", "Jl. Ir. Asep Syaepuloh")
                 .multiPart("phone", "081919191919")
                 .multiPart("gender", "Laki-Laki")
-                .multiPart("docs", new File("src/test/resources/documentToUpload/apply_form_ranger.pdf"))
-                .multiPart("price/day", 150000)
-                .multiPart("detail", "suka makan ikan");
+                .multiPart("docs", new File("src/test/resources/documentToUpload/apply_form_ranger.pdf"));
     }
 
     @Step("post apply as ranger without address")
@@ -86,9 +80,7 @@ public class GunTourAPI_Ranger {
 //                .multiPart("address", "Jl. Ir. Asep Syaepuloh")
                 .multiPart("phone", "081919191919")
                 .multiPart("gender", "Laki-Laki")
-                .multiPart("docs", new File("src/test/resources/documentToUpload/apply_form_ranger.pdf"))
-                .multiPart("price/day", 150000)
-                .multiPart("detail", "suka makan ikan");
+                .multiPart("docs", new File("src/test/resources/documentToUpload/apply_form_ranger.pdf"));
     }
 
     @Step("post apply as ranger without phone")
@@ -100,9 +92,7 @@ public class GunTourAPI_Ranger {
                 .multiPart("address", "Jl. Ir. Asep Syaepuloh")
 //                .multiPart("phone", "081919191919")
                 .multiPart("gender", "Laki-Laki")
-                .multiPart("docs", new File("src/test/resources/documentToUpload/apply_form_ranger.pdf"))
-                .multiPart("price/day", 150000)
-                .multiPart("detail", "suka makan ikan");
+                .multiPart("docs", new File("src/test/resources/documentToUpload/apply_form_ranger.pdf"));
     }
 
     @Step("post apply as ranger without gender")
@@ -114,9 +104,7 @@ public class GunTourAPI_Ranger {
                 .multiPart("address", "Jl. Ir. Asep Syaepuloh")
                 .multiPart("phone", "081919191919")
 //                .multiPart("gender", "Laki-Laki")
-                .multiPart("docs", new File("src/test/resources/documentToUpload/apply_form_ranger.pdf"))
-                .multiPart("price/day", 150000)
-                .multiPart("detail", "suka makan ikan");
+                .multiPart("docs", new File("src/test/resources/documentToUpload/apply_form_ranger.pdf"));
     }
 
     @Step("post apply as ranger without docs")
@@ -127,38 +115,8 @@ public class GunTourAPI_Ranger {
                 .multiPart("ttl", "Surabaya, 31 Desember 1945")
                 .multiPart("address", "Jl. Ir. Asep Syaepuloh")
                 .multiPart("phone", "081919191919")
-                .multiPart("gender", "Laki-Laki")
+                .multiPart("gender", "Laki-Laki");
 //                .multiPart("docs", new File("src/test/resources/documentToUpload/apply_form_ranger.pdf"))
-                .multiPart("price/day", 150000)
-                .multiPart("detail", "suka makan ikan");
-    }
-
-    @Step("post apply as ranger without price")
-    public void postApplyAsRangerWithoutprice() {
-        given().headers("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHBpcmVkIjoxNjY3ODk0ODQxLCJpZCI6MTgsInJvbGUiOiJwZW5kYWtpIn0.-IATEY_pngGU7Ac-XXy9uZKEmfzb91DZjhDsnJnWB78")
-                .contentType("multipart/form-data")
-                .multiPart("fullname", "Bambang Gentoled")
-                .multiPart("ttl", "Surabaya, 31 Desember 1945")
-                .multiPart("address", "Jl. Ir. Asep Syaepuloh")
-                .multiPart("phone", "081919191919")
-                .multiPart("gender", "Laki-Laki")
-                .multiPart("docs", new File("src/test/resources/documentToUpload/apply_form_ranger.pdf"))
-//                .multiPart("price/day", 150000)
-                .multiPart("detail", "suka makan ikan");
-    }
-
-    @Step("post apply as ranger without detail")
-    public void postApplyAsRangerWithoutdetail() {
-        given().headers("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHBpcmVkIjoxNjY3ODk0ODQxLCJpZCI6MTgsInJvbGUiOiJwZW5kYWtpIn0.-IATEY_pngGU7Ac-XXy9uZKEmfzb91DZjhDsnJnWB78")
-                .contentType("multipart/form-data")
-                .multiPart("fullname", "Bambang Gentoled")
-                .multiPart("ttl", "Surabaya, 31 Desember 1945")
-                .multiPart("address", "Jl. Ir. Asep Syaepuloh")
-                .multiPart("phone", "081919191919")
-                .multiPart("gender", "Laki-Laki")
-                .multiPart("docs", new File("src/test/resources/documentToUpload/apply_form_ranger.pdf"))
-                .multiPart("price/day", 150000);
-//                .multiPart("detail", "suka makan ikan");
     }
 
     @Step("get ranger list")

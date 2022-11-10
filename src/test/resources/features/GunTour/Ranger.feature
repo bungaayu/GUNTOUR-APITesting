@@ -31,12 +31,14 @@ Feature: Ranger
     Then API should return code 400 BAD REQUEST
     And post ranger invalid json schema validator
 
+
   @fauzan @ranger
   Scenario: post ranger without phone
     Given user apply as ranger without phone
     When send request post ranger
     Then API should return code 400 BAD REQUEST
     And post ranger invalid json schema validator
+
 
   @fauzan @ranger
   Scenario: post ranger without gender
@@ -45,6 +47,7 @@ Feature: Ranger
     Then API should return code 400 BAD REQUEST
     And post ranger invalid json schema validator
 
+
   @fauzan @ranger
   Scenario: post ranger without docs
     Given user apply as ranger without docs
@@ -52,19 +55,6 @@ Feature: Ranger
     Then API should return code 400 BAD REQUEST
     And post ranger invalid json schema validator
 
-  @fauzan @ranger
-  Scenario: post ranger without price per day
-    Given user apply as ranger without price per day
-    When send request post ranger
-    Then API should return code 400 BAD REQUEST
-    And post ranger invalid json schema validator
-
-  @fauzan @ranger
-  Scenario: post ranger without detail
-    Given user apply as ranger without detail
-    When send request post ranger
-    Then API should return code 201 CREATED
-    And post ranger json schema validator
 
   @fauzan @ranger
   Scenario: post ranger with invalid parameter
@@ -72,11 +62,13 @@ Feature: Ranger
     When send request post ranger with invalid parameter
     Then API should return code 404 NOT FOUND
 
+
   @fauzan @ranger
   Scenario: post ranger without parameter
     Given user apply as ranger with valid data
     When send request post ranger without parameter
     Then API should return code 404 NOT FOUND
+
 
   @fauzan @ranger
   Scenario Outline: get ranger with valid data format
