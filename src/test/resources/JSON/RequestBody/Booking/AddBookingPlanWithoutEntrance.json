@@ -1,0 +1,22 @@
+{
+  "date_start": "2023-02-19T04:54:42.123+07:00",
+  "date_end": "2023-02-21T04:54:42.123+07:00",
+  "ticket": 3,
+  "product": [
+    {
+      "id_product": 1,
+      "product_name": "Tenda",
+      "product_qty": 3,
+      "rent_price": 100000
+    },
+    {
+      "id_product": 2,
+      "product_name": "selimut",
+      "product_qty": 3,
+      "rent_price": 100000
+    }
+  ],
+  "id_ranger": 1,
+  "ranger_name": "sodikin",
+  "gross_amount": 200000
+}
