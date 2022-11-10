@@ -91,12 +91,8 @@ Feature: Products
         |id|
         |40 |
         |68 |
-        |75 |
-        |76 |
         |77 |
         |81 |
-        |82 |
-        |83 |
 
       @fauzan @product
       Scenario Outline: get product detail with invalid id

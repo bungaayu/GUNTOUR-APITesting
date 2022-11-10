@@ -131,7 +131,7 @@ public class GunTourAPI_Ranger {
     @Step("put update ranger apply status")
     public void putUpdateRangerApplyStatus(File json, int id_ranger){
              given().log().all()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHBpcmVkIjoxNjY3OTgyNTA4LCJpZCI6Miwicm9sZSI6ImFkbWluIn0.aA4h2zKOSzCcWq-X57IBt1a1HZpf4BH8FP-KNcqLr-U")
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHBpcmVkIjoxNjY4MDgwNTMwLCJpZCI6Miwicm9sZSI6ImFkbWluIn0.le5qndYYKc3v1f18HRiXGi-6mI9gc5Hv-28uzeKAyus")
                 .pathParam("id_ranger", id_ranger)
                 .contentType(ContentType.JSON)
                 .body(json);
@@ -140,7 +140,7 @@ public class GunTourAPI_Ranger {
     @Step("put update ranger apply status")
     public void putUpdateRangerApplyStatusWithNoID(File json){
              given().log().all()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHBpcmVkIjoxNjY3OTgyNTA4LCJpZCI6Miwicm9sZSI6ImFkbWluIn0.aA4h2zKOSzCcWq-X57IBt1a1HZpf4BH8FP-KNcqLr-U")
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHBpcmVkIjoxNjY4MDgwNTMwLCJpZCI6Miwicm9sZSI6ImFkbWluIn0.le5qndYYKc3v1f18HRiXGi-6mI9gc5Hv-28uzeKAyus")
                 .contentType(ContentType.JSON)
                 .body(json);
     }

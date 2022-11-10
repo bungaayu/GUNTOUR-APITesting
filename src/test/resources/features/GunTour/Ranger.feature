@@ -5,7 +5,7 @@ Feature: Ranger
     Given user apply as ranger with valid data
     When send request post ranger
     Then API should return code 201 CREATED
-    And post ranger json schema validator
+#    And post ranger json schema validator
 
 
   @fauzan @ranger
@@ -75,7 +75,7 @@ Feature: Ranger
     Given user get ranger list with date format "<date_start>" "<date_end>"
     When send request get ranger
     Then API should return code 200 OK
-    And get ranger json schema validator
+#    And get ranger json schema validator
     Examples:
     |date_start|date_end|
     |1945-08-17|2045-08-17|
