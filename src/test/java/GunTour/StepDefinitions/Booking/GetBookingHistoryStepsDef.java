@@ -1,4 +1,4 @@
-package GunTour.StepDefinitions;
+package GunTour.StepDefinitions.Booking;
 
 import GunTour.API.GunTourAPI_Booking;
 import GunTour.Responses.GlobalEnv;

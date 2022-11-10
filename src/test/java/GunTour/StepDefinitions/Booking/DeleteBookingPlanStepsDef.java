@@ -1,6 +1,7 @@
-package GunTour.StepDefinitions;
+package GunTour.StepDefinitions.Booking;
 
 import GunTour.API.GunTourAPI_Booking;
+import GunTour.StepDefinitions.Booking.AddBookingPlanStepsDef;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
