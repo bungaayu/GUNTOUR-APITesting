@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "id_ranger": {
+          "type": "integer"
+        },
+        "status": {
+          "type": "string"
+        },
+        "status_apply": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id_ranger",
+        "status",
+        "status_apply"
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "data",
+    "message"
+  ]
+}

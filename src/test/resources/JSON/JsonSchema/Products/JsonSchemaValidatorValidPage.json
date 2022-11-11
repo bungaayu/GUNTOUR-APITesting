@@ -1,0 +1,187 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string"
+    },
+    "page": {
+      "type": "integer"
+    },
+    "total_page": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id_product": {
+              "type": "integer"
+            },
+            "product_name": {
+              "type": "string"
+            },
+            "rent_price": {
+              "type": "integer"
+            },
+            "product_picture": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id_product",
+            "product_name",
+            "rent_price",
+            "product_picture"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id_product": {
+              "type": "integer"
+            },
+            "product_name": {
+              "type": "string"
+            },
+            "rent_price": {
+              "type": "integer"
+            },
+            "product_picture": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id_product",
+            "product_name",
+            "rent_price",
+            "product_picture"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id_product": {
+              "type": "integer"
+            },
+            "product_name": {
+              "type": "string"
+            },
+            "rent_price": {
+              "type": "integer"
+            },
+            "product_picture": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id_product",
+            "product_name",
+            "rent_price",
+            "product_picture"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id_product": {
+              "type": "integer"
+            },
+            "product_name": {
+              "type": "string"
+            },
+            "rent_price": {
+              "type": "integer"
+            },
+            "product_picture": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id_product",
+            "product_name",
+            "rent_price",
+            "product_picture"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id_product": {
+              "type": "integer"
+            },
+            "product_name": {
+              "type": "string"
+            },
+            "rent_price": {
+              "type": "integer"
+            },
+            "product_picture": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id_product",
+            "product_name",
+            "rent_price",
+            "product_picture"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id_product": {
+              "type": "integer"
+            },
+            "product_name": {
+              "type": "string"
+            },
+            "rent_price": {
+              "type": "integer"
+            },
+            "product_picture": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id_product",
+            "product_name",
+            "rent_price",
+            "product_picture"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id_product": {
+              "type": "integer"
+            },
+            "product_name": {
+              "type": "string"
+            },
+            "rent_price": {
+              "type": "integer"
+            },
+            "product_picture": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id_product",
+            "product_name",
+            "rent_price",
+            "product_picture"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "message",
+    "page",
+    "total_page",
+    "data"
+  ]
+}
