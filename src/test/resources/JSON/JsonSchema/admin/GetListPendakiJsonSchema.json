@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string"
+    },
+    "climber": {
+      "type": "object",
+      "properties": {
+        "is_climber": {
+          "type": "integer"
+        },
+        "male_climber": {
+          "type": "integer"
+        },
+        "female_climber": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "is_climber",
+        "male_climber",
+        "female_climber"
+      ]
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id_pendaki": {
+              "type": "integer"
+            },
+            "fullname": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "date_start": {
+              "type": "string"
+            },
+            "date_end": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id_pendaki",
+            "fullname",
+            "phone",
+            "date_start",
+            "date_end"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id_pendaki": {
+              "type": "integer"
+            },
+            "fullname": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "date_start": {
+              "type": "string"
+            },
+            "date_end": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id_pendaki",
+            "fullname",
+            "phone",
+            "date_start",
+            "date_end"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id_pendaki": {
+              "type": "integer"
+            },
+            "fullname": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "date_start": {
+              "type": "string"
+            },
+            "date_end": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id_pendaki",
+            "fullname",
+            "phone",
+            "date_start",
+            "date_end"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "message",
+    "climber",
+    "data"
+  ]
+}

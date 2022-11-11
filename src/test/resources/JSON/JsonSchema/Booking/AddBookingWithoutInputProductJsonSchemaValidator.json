@@ -1,0 +1,67 @@
+
+
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "id_booking": {
+          "type": "integer"
+        },
+        "date_start": {
+          "type": "string"
+        },
+        "date_end": {
+          "type": "string"
+        },
+        "entrance": {
+          "type": "string"
+        },
+        "ticket": {
+          "type": "integer"
+        },
+        "product": {
+          "type": "null"
+        },
+        "id_ranger": {
+          "type": "integer"
+        },
+        "gross_amount": {
+          "type": "integer"
+        },
+        "order_id": {
+          "type": "string"
+        },
+        "link": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id_booking",
+        "date_start",
+        "date_end",
+        "entrance",
+        "ticket",
+        "product",
+        "id_ranger",
+        "gross_amount",
+        "order_id",
+        "link",
+        "status"
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "data",
+    "message"
+  ]
+}
+
