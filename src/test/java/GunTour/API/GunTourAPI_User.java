@@ -7,7 +7,7 @@ import net.thucydides.core.annotations.Step;
 
 import java.io.File;
 
-public class GunTourUserAPI {
+public class GunTourAPI_User {
     public static final String DIR = System.getProperty("user.dir");
     public static final String JSON_FILE_USER = DIR+"/src/test/resources/JSON";
     public static String BASE_URL_USER= "https://mdanys.online";

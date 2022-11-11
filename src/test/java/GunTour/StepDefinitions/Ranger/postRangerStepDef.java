@@ -1,14 +1,12 @@
-package GunTour.StepDefinitions.ranger;
+package GunTour.StepDefinitions.Ranger;
 
 
-import GunTour.API.GunTourAPI_Products;
 import GunTour.API.GunTourAPI_Ranger;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
-import net.serenitybdd.cucumber.suiteslicing.SerenityTags;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 

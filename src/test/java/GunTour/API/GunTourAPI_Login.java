@@ -6,7 +6,7 @@ import net.thucydides.core.annotations.Step;
 
 import java.io.File;
 
-public class GunTourLoginAPI {
+public class GunTourAPI_Login {
 
     public static final String DIR = System.getProperty("user.dir");
     public static final String JSON_FILE_LOGIN = DIR+"/src/test/resources/JSON";

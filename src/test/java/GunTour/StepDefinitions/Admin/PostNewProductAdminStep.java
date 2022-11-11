@@ -1,6 +1,6 @@
 package GunTour.StepDefinitions.Admin;
 
-import GunTour.API.AdminAPI;
+import GunTour.API.GunTourAPI_Admin;
 import GunTour.Responses.GlobalEnv;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -15,17 +15,17 @@ import java.io.File;
 
 public class PostNewProductAdminStep {
     @Steps
-    AdminAPI adminAPI;
+    GunTourAPI_Admin gunTourAPIAdmin;
     GlobalEnv globalEnv;
 
     //Admin-013
     @Given("set post valid request body to json data")
     public void setPostValidRequestBodyToJsonData(){
-        adminAPI.postAddNewProduct();
+        gunTourAPIAdmin.postAddNewProduct();
     }
     @When("send request post add new product")
     public void sendRequestPostAddNewProduct() {
-        SerenityRest.when().post(AdminAPI.POST_ADD_NEW_PRODUCT);
+        SerenityRest.when().post(GunTourAPI_Admin.POST_ADD_NEW_PRODUCT);
     }
     @Then("should return {int} created")
     public void shouldReturnCreated(int created) {
@@ -37,33 +37,33 @@ public class PostNewProductAdminStep {
     }
     @And("post add new product json schema")
     public void postAddNewProductJsonSchema() {
-        File json = new File(AdminAPI.JSON_FILE+"/JsonSchema/admin/PostNewProductJsonSchema.json");
+        File json = new File(GunTourAPI_Admin.JSON_FILE+"/JsonSchema/admin/PostNewProductJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
     }
 
     //Admin-014
     @Given("set post empty request body to json data")
     public void setPostEmptyRequestBodyToJsonData() {
-        File json = new File(AdminAPI.JSON_FILE+"/RequestBody/admin/PostNewProductEmptyBody.json");
-        adminAPI.postAddNewProductInvalid(json);
+        File json = new File(GunTourAPI_Admin.JSON_FILE+"/RequestBody/admin/PostNewProductEmptyBody.json");
+        gunTourAPIAdmin.postAddNewProductInvalid(json);
     }
     @And("post new product with invalid body json schema")
     public void postNewProductWithInvalidBodyJsonSchema() {
-        File json = new File(AdminAPI.JSON_FILE+"/JsonSchema/admin/PostNewProductInvJsonSchema.json");
+        File json = new File(GunTourAPI_Admin.JSON_FILE+"/JsonSchema/admin/PostNewProductInvJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
     }
 
     //Admin-015
     @Given("set post incomplete request body to json data")
     public void setPostIncompleteRequestBodyToJsonData() {
-        File json = new File(AdminAPI.JSON_FILE+"/RequestBody/admin/PostNewProductIncomplete.json");
-        adminAPI.postAddNewProductInvalid(json);
+        File json = new File(GunTourAPI_Admin.JSON_FILE+"/RequestBody/admin/PostNewProductIncomplete.json");
+        gunTourAPIAdmin.postAddNewProductInvalid(json);
     }
 
     //Admin-016
     @Given("set post invalid request body to json data")
     public void setPostInvalidRequestBodyToJsonData() {
-        adminAPI.postAddNewProductInvalid();
+        gunTourAPIAdmin.postAddNewProductInvalid();
     }
 
     @And("API send productID to dynamic variable")
@@ -79,13 +79,13 @@ public class PostNewProductAdminStep {
     //LOGIN_ADMIN
     @Given("set post login with body json")
     public void setPostLoginWithBodyJson() {
-        File json = new File(AdminAPI.JSON_FILE+"/RequestBody/admin/LoginAdmin.json");
-        adminAPI.postLoginAdmin(json);
+        File json = new File(GunTourAPI_Admin.JSON_FILE+"/RequestBody/admin/LoginAdmin.json");
+        gunTourAPIAdmin.postLoginAdmin(json);
     }
 
     @When("send request post login admin")
     public void sendRequestPostLoginAdmin() {
-        SerenityRest.when().post(AdminAPI.LOGIN_ADMIN);
+        SerenityRest.when().post(GunTourAPI_Admin.LOGIN_ADMIN);
     }
     @Then("API should return {int} accepted")
     public void apiShouldReturnCreated(int accepted) {
@@ -93,11 +93,11 @@ public class PostNewProductAdminStep {
     }
     @And("API send token to dynamic variable")
     public void apiSendTokenToDynamicVariable() {
-        adminAPI.AUTH_ADMIN = SerenityRest.then().extract().path("data.token");
+        gunTourAPIAdmin.AUTH_ADMIN = SerenityRest.then().extract().path("data.token");
     }
     @And("assert token not {int}")
     public void assertTokenNot(int val) {
-        Assert.assertNotEquals(adminAPI.AUTH_ADMIN, val);
+        Assert.assertNotEquals(gunTourAPIAdmin.AUTH_ADMIN, val);
     }
 
 }

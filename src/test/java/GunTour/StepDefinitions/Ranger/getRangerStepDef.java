@@ -1,4 +1,4 @@
-package GunTour.StepDefinitions.ranger;
+package GunTour.StepDefinitions.Ranger;
 
 import GunTour.API.GunTourAPI_Ranger;
 import io.cucumber.java.en.And;

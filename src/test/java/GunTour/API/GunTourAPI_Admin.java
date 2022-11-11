@@ -7,7 +7,7 @@ import net.thucydides.core.annotations.Step;
 
 import java.io.File;
 
-public class AdminAPI {
+public class GunTourAPI_Admin {
 
     GlobalEnv globalEnv;
     public static String AUTH = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHBpcmVkIjoxNjY3ODk0MzE1LCJpZCI6Miwicm9sZSI6ImFkbWluIn0.BxrgatwoCX3sXoKrkZCqjC-grjeA-K7A5AphNEaqEDU";

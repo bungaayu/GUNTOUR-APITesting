@@ -1,4 +1,4 @@
-package GunTour.StepDefinitions.products;
+package GunTour.StepDefinitions.Products;
 
 import GunTour.API.GunTourAPI_Products;
 import io.cucumber.java.en.And;

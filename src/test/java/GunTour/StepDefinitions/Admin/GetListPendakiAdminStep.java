@@ -1,6 +1,6 @@
 package GunTour.StepDefinitions.Admin;
 
-import GunTour.API.AdminAPI;
+import GunTour.API.GunTourAPI_Admin;
 import GunTour.Responses.AdminResponse;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -16,16 +16,16 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class GetListPendakiAdminStep {
     @Steps
-    AdminAPI adminAPI;
+    GunTourAPI_Admin gunTourAPIAdmin;
 
     //Admin-001
     @Given("set path to get list pendaki")
     public void setPathToGetListPendaki(){
-        adminAPI.getListPendaki();
+        gunTourAPIAdmin.getListPendaki();
     }
     @When("send request get list pendaki")
     public void sendRequestGetListPendaki() {
-        SerenityRest.when().get(AdminAPI.GET_LIST_PENDAKI);
+        SerenityRest.when().get(GunTourAPI_Admin.GET_LIST_PENDAKI);
     }
     @Then("response should return {int} ok")
     public void responseShouldReturnOk(int ok) {
@@ -33,14 +33,14 @@ public class GetListPendakiAdminStep {
     }
     @And("get list pendaki json schema validator")
     public void getListPendakiJsonSchemaValidator() {
-        File json = new File(AdminAPI.JSON_FILE+"/JsonSchema/admin/GetListPendakiJsonSchema.json");
+        File json = new File(GunTourAPI_Admin.JSON_FILE+"/JsonSchema/admin/GetListPendakiJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
     }
 
     //Admin-002
     @When("send request get list string pendaki")
     public void sendRequestGetListStringPendaki() {
-        SerenityRest.when().get(AdminAPI.GET_LIST_PENDAKI+"berani");
+        SerenityRest.when().get(GunTourAPI_Admin.GET_LIST_PENDAKI+"berani");
     }
     @Then("should return {int} not found")
     public void shouldReturnNotFound(int notfound) {
@@ -52,20 +52,20 @@ public class GetListPendakiAdminStep {
     }
     @And("get list pendaki invalid json schema validator")
     public void getListPendakiInvalidJsonSchemaValidator() {
-        File json = new File(AdminAPI.JSON_FILE+"/JsonSchema/admin/GetListPendakiInvJsonSchema.json");
+        File json = new File(GunTourAPI_Admin.JSON_FILE+"/JsonSchema/admin/GetListPendakiInvJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
     }
 
     //Admin-003
     @When("send request get list special char pendaki")
     public void sendRequestGetListSpecialCharPendaki() {
-        SerenityRest.when().get(AdminAPI.GET_LIST_PENDAKI+"@$^$");
+        SerenityRest.when().get(GunTourAPI_Admin.GET_LIST_PENDAKI+"@$^$");
     }
 
     //Admin-004
     @When("send request get list int pendaki")
     public void sendRequestGetListintPendaki() {
-        SerenityRest.when().get(AdminAPI.GET_LIST_PENDAKI+"123");
+        SerenityRest.when().get(GunTourAPI_Admin.GET_LIST_PENDAKI+"123");
     }
 
 
