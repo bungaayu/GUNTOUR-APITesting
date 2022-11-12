@@ -1,6 +1,6 @@
 Feature: Get booking ranger
   Background:
-    Given User already login
+    Given User already login as ranger
 
   @positive @booking
   Scenario: Get booking ranger with all valid value
@@ -13,12 +13,13 @@ Feature: Get booking ranger
   Scenario Outline: Get booking ranger invalid path with value string
     Given Get booking ranger with invalid path "<path>"
     When Send request get booking ranger
-    Then Should return 404 Not Found
+    Then Should return 400 Bad Request
+    And Should return body contain message "id booking must integer"
     Examples:
     |path|
     |*$@&)!|
     |rangersr|
-    |492840|
+    |yt492840|
 
   @negative @booking
   Scenario: Get booking ranger without authorization
