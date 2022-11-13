@@ -12,7 +12,7 @@ Feature: Edit booking plan
   Scenario: Edit booking plan with all valid value
     Given Edit booking plan with all valid created ID booking
     When Send request put edit booking plan
-    Then Should return 201 Created
+    Then Should return 202 Accepted
     And Assert json schema edit booking plan
 
   @negative @booking
@@ -54,7 +54,7 @@ Feature: Edit booking plan
   Scenario: Edit booking plan without input start date
     Given Edit booking plan valid id without input start date
     When Send request put edit booking plan
-    Then Should return 201 Created
+    Then Should return 202 Accepted
     And Should return body contain message "success edit booking plan"
     And Assert json schema edit booking plan without input start date
 
@@ -62,7 +62,7 @@ Feature: Edit booking plan
   Scenario: Edit booking plan without input end date
     Given Edit booking plan valid id without input end date
     When Send request put edit booking plan
-    Then Should return 201 Created
+    Then Should return 202 Accepted
     And Should return body contain message "success edit booking plan"
     And Assert json schema edit booking plan without input end date
 
@@ -70,7 +70,7 @@ Feature: Edit booking plan
   Scenario: Edit booking plan without input entrance
     Given Edit booking plan valid id without input entrance
     When Send request put edit booking plan
-    Then Should return 201 Created
+    Then Should return 202 Accepted
     And Should return body contain message "success edit booking plan"
     And Assert json schema edit booking plan without input entrance
 
@@ -78,7 +78,7 @@ Feature: Edit booking plan
   Scenario: Edit booking plan without input ticket
     Given Edit booking plan valid id without input ticket
     When Send request put edit booking plan
-    Then Should return 201 Created
+    Then Should return 202 Accepted
     And Should return body contain message "success edit booking plan"
     And Assert json schema edit booking plan without input ticket
 
@@ -86,7 +86,7 @@ Feature: Edit booking plan
   Scenario: Edit booking plan without input ranger
     Given Edit booking plan valid id without input ranger
     When Send request put edit booking plan
-    Then Should return 201 Created
+    Then Should return 202 Accepted
     And Should return body contain message "success edit booking plan"
     And Assert json schema edit booking plan without input ranger
 
@@ -94,7 +94,7 @@ Feature: Edit booking plan
   Scenario: Edit booking plan without input status
     Given Edit booking plan valid id without input status
     When Send request put edit booking plan
-    Then Should return 201 Created
+    Then Should return 202 Accepted
     And Should return body contain message "success edit booking plan"
     And Assert json schema edit booking plan without input status
 
