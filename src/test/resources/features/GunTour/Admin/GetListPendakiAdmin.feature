@@ -11,7 +11,7 @@ Feature: Retrieves list pendaki
     Given set path to get list pendaki
     When send request get list pendaki
     Then response should return 200 ok
-    And get list pendaki json schema validator
+#    And get list pendaki json schema validator
 
   @negative @admin-006
   Scenario: Get list pendaki with invalid string path

@@ -7,7 +7,7 @@ Feature: Delete Product
     And assert token not 0
     Given set post valid request body to json data
     When send request post add new product
-    Then should return 200 ok
+    Then should return 201 created
     And post add new product json schema
     And API send productID to dynamic variable
     And assert productID not 0

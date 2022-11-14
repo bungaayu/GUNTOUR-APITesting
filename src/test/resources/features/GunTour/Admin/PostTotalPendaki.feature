@@ -10,7 +10,7 @@ Feature: Add total pendaki by Admin
   Scenario: Post add total pendaki with valid request body
     Given set post pendaki with valid request body to json data
     When send request post add total pendaki
-    Then should return 200 ok
+    Then should return 201 created
     And post add total pendaki json schema
     And assert pendakiID not 0
 

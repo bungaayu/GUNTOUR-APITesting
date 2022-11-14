@@ -89,10 +89,10 @@ Feature: Products
         And response body should match product detail json schema validator
         Examples:
         |id|
-        |40 |
-        |68 |
-        |77 |
-        |81 |
+        |215 |
+        |216 |
+        |218 |
+        |219 |
 
       @fauzan @product
       Scenario Outline: get product detail with invalid id
@@ -152,12 +152,9 @@ Feature: Products
         When send request get product detail with invalid parameter
         Then API should return code 404 NOT FOUND
         Examples:
+        Examples:
           |id|
-          |40 |
-          |68 |
-          |75 |
-          |76 |
-          |77 |
-          |81 |
-          |82 |
-          |83 |
+          |215 |
+          |216 |
+          |218 |
+          |219 |
