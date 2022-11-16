@@ -44,10 +44,11 @@
 ## Documentation
 - [Manual API Test Documentation](https://docs.google.com/spreadsheets/d/1ZLyXGyvMIhD8eY9TnLEyRrLV87XKUFvw03Rhn7xtT-I/edit#gid=1910183386)
 
-## Screenshoot Manual Testing
---
-## Screenshoot API Automation Testing
---
+## 📝 Reports
+![api report](https://user-images.githubusercontent.com/109534135/202136068-daff0e70-3bf5-4630-939b-ce19e24a65e3.JPG)
+
+
+    
 
 ## Language and Tools
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
