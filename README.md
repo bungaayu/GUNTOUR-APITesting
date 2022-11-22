@@ -44,6 +44,20 @@
 ## Documentation
 - [Manual API Test Documentation](https://docs.google.com/spreadsheets/d/1ZLyXGyvMIhD8eY9TnLEyRrLV87XKUFvw03Rhn7xtT-I/edit#gid=1910183386)
 
+## How to Run
+1. Clone this repository using this command
+   ```sh
+   git clone https://github.com/GunTour/GunTour-API-Automation.git
+   ```
+2. Change directory to project directory
+   ```sh
+   cd GunTour-API-Automation
+   ```
+3. Run using this command
+   ```sh
+   mvn clean verify
+   ```
+
 ## 📝 Reports
 ![api report](https://user-images.githubusercontent.com/109534135/202136068-daff0e70-3bf5-4630-939b-ce19e24a65e3.JPG)
 
