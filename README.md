@@ -38,16 +38,17 @@
   This is an important section for climbers because it contains important information and important files
   <br>
 
-
 <br>
 
 ## Documentation
-- [Manual API Test Documentation](https://docs.google.com/spreadsheets/d/1ZLyXGyvMIhD8eY9TnLEyRrLV87XKUFvw03Rhn7xtT-I/edit#gid=1910183386)
+- [Manual API Test Documentation](https://docs.google.com/spreadsheets/d/1ZLyXGyvMIhD8eY9TnLEyRrLV87XKUFvw03Rhn7xtT-I/edit#gid=1910183386) 
+
+<br>
 
 ## How to Run
 1. Clone this repository using this command
    ```sh
-   git clone https://github.com/GunTour/GunTour-API-Automation.git
+   git clone https://github.com/bungaayu/GUNTOUR-APITesting
    ```
 2. Change directory to project directory
    ```sh
@@ -57,11 +58,12 @@
    ```sh
    mvn clean verify
    ```
+<br>
 
 ## 📝 Reports
 ![api report](https://user-images.githubusercontent.com/109534135/202136068-daff0e70-3bf5-4630-939b-ce19e24a65e3.JPG)
 
-
+<br>
     
 
 ## Language and Tools
@@ -71,6 +73,8 @@
 ![Rest Assured](https://img.shields.io/badge/-rest%20assured-000000?style=for-the-badge&logoColor=black)
 ![Serenity BDD](https://img.shields.io/badge/-serenity%20bdd-16a67a?style=for-the-badge&logoColor=black)
 ![Cucumber](https://img.shields.io/badge/-cucumber-4bc47b?style=for-the-badge&logoColor=black)
+
+<br>
 
 ## Contacts
 
